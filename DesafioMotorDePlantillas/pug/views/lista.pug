@@ -1,0 +1,29 @@
+DOCTYPE
+html(lang='en')
+ head
+  meta(charset='utf-8')
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous")
+  title='LISTA DE PRODUCTOS CON PUG'
+
+  body(class='bg-dark')
+   h2(class='text-light m-3 me-auto') LISTA DE PRODUCTOS 
+   
+    if productos.length > 0
+     div(class='table-responsive')
+      table(class='table table-dark')
+       tr 
+        th(class='text-center text-light') ID
+        th(class='text-center text-light') NOMBRE
+        th(class='text-center text-light') PRECIO
+        th(width='100px') IMAGEN URL
+       each producto in productos
+        tr 
+         td(class='text-center text-light')= producto.id
+         td(class='text-center text-light')= producto.nombre 
+         td(class='text-center text-light')= producto.precio 
+         td(width='100px')= producto.imagen 
+    else
+     h2(class='alert, alert-danger') NO HAY PRODUCTOS EN LA LISTA.
+
+    a(href="./formulario.pug")
+     button(class='btn btn-outline-light') REGRESAR AL FORMULARIO            

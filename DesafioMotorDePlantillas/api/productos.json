@@ -1,0 +1,26 @@
+[
+	{
+        "id": 0,
+        "nombre": "Botines Munich Continental",
+        "precio": "€120",
+        "imagen": "https://chemasport.es/8044-thickbox_default/zapatillas-munich-continental-blanco.jpg"
+	},
+	{
+        "id": 1,
+        "nombre": "Botines Munich G3",
+        "precio": "€130",
+        "imagen": "https://mendofutsal.com.ar/wp-content/uploads/2022/04/Munich-G3-Profit-Blanco-1500x1500-1.jpg"
+	},
+	{
+        "id": 2,
+        "nombre": "Botines Nike Street Gato",
+        "precio": "€155",
+        "imagen": "https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwa66c5b16/products/NI_DC8466-250/NI_DC8466-250-1.JPG"
+	},
+	{
+        "id": 3,
+	"nombre": "Botines Nike Premier II",
+	"precio": "€110",
+	"imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765182/ProyectoReactJs/botinesNikePremier2_zku69f.jpg"
+	}
+]

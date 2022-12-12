@@ -1,0 +1,11 @@
+{{#if messages.length}}
+    {{#each messages}}
+        <div class="message d-flex flex-column">
+            <div class="info d-flex">
+                <p class="date text-light pe-1">{{this.date}}</p>
+                <p class="email text-light ps-1">{{this.mail}}</p>
+            </div>
+            <p class="text text-light">{{this.text}}</p>
+        </div>
+    {{/each}}
+{{/if}}

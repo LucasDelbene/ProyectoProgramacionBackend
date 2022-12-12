@@ -1,0 +1,7 @@
+[
+  {
+    "date": "2022-12-12  2:5",
+    "mail": "Lucasdelbene14@gmail.com",
+    "text": "BIENVENIDOS A MI PRIMER CHAT EN WEBSOCKET "
+  }
+]

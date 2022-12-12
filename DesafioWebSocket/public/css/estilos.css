@@ -1,0 +1,35 @@
+.tituloPrincipal{
+    margin: 50px 0px 50px;
+    text-align: center;
+    color: white;
+}
+.tituloDatosProducto{
+    margin: 100px 0px 30px;
+    background-color: black;
+    color: white;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+}
+.tituloChat{
+    text-align: center;
+}
+.tituloNoHayProductos{
+    color: white;
+    padding: 15px 15px 15px 15px;
+}
+
+.seccionChat{
+    position: relative;
+    top: 100px;
+    left: 350px;
+    margin-bottom: 500px;
+}
+.mensajes{
+    text-align: center;
+    background-color: black;
+    color: white;
+    position: relative;
+    left: 200px;
+}
+
+
