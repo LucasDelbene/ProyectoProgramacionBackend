@@ -16,10 +16,11 @@ newProduct.addEventListener('submit', event => {
   })
   newProduct.reset();
 })
+
 const messageForm = document.getElementById('messageForm');
 messageForm.addEventListener('submit', event => {
   event.preventDefault()
-  console.log('Boton enviar presionado')
+  console.log('BOTON DE ENVIAR PRESIONADO')
   let today = new Date();
   let date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()+"  "+today.getHours() + ":" + today.getMinutes()
   let mail = document.getElementById('email').value
@@ -31,22 +32,28 @@ messageForm.addEventListener('submit', event => {
   })
   messageForm.reset();
 })
+
+//CONEXION DE UN USUARIO//
 socket.on('connect', () => {
-  console.warn('Conectado al servidor');
+  console.warn('USUARIO CONECTADO');
 });
-socket.on('update_products', products => {
-  fetch('http://localhost:8080/views/products-render.hbs')
+
+//ACTUALIZACION DE PRODUCTOS//
+socket.on('update_products', productos => {
+  fetch('http://localhost:8080/views/productos.hbs')
     .then(response => {
       return response.text()
     })
     .then(plantilla => {
       let template = Handlebars.compile(plantilla);
-      let html = template({products})
+      let html = template({productos})
       document.getElementById('productos').innerHTML = html;
     })
 })
+
+//ACTUALIZACION DE MENSAJES//
 socket.on('update_messages', messages => {
-  fetch('http://localhost:8080/views/messages-render.hbs')
+  fetch('http://localhost:8080/views/mensajes.hbs')
     .then(response => {
       return response.text()
     })
