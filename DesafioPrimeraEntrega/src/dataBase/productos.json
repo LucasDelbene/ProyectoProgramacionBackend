@@ -1,0 +1,92 @@
+[
+    {
+      "id": 1,
+      "timestamp": 1642370596499,
+      "nombre": "Botines Munich Continental",
+      "descripcion": "Botines Munich Continental Blancos",
+      "codigo": "BotinesMunich1",
+      "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765181/ProyectoReactJs/botinesMunichContinental_wctv7q.jpg",
+      "precio": 120,
+      "stock": true
+    },
+    {
+      "id": 2,
+      "timestamp": 1642370884552,
+      "nombre": "Botines Munich G3",
+      "descripcion": "Botines Munich G3 Rojos",
+      "codigo": "BotinesMunich2",
+      "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765181/ProyectoReactJs/botinesMunichG3_whg5a8.jpg",
+      "precio": 140,
+      "stock": true
+    },
+    {
+      "id": 3,
+      "timestamp": 1642371036890,
+      "nombre": "Botines Munich Prisma",
+      "descripcion": "Botines Munich Prisma Blancos",
+      "codigo": "BotinesMunich3",
+      "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765182/ProyectoReactJs/botinesMunichPrisma_lfipfb.jpg",
+      "precio": 90,
+      "stock": true
+    },
+    {
+      "id": 4,
+      "timestamp": 1645821962747,   
+      "nombre": "Botines Kelme Indoor Copa",
+      "descripcion": "Botines Kelme Indoor Copa Blancos",
+      "codigo": "BotinesKelme1",
+      "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765181/ProyectoReactJs/botinesKelmeIndoorCopa_j4f8at.jpg",
+      "precio": 105,
+      "stock": true
+    },
+    {
+      "id": 5,
+      "timestamp": 1645821962747,   
+      "nombre": "Botines Kelme Precision",
+      "descripcion": "Botines Kelme Precision Grises",
+      "codigo": "BotinesKelme2",
+      "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765181/ProyectoReactJs/botinesKelmePrecision_zgsh9h.jpg",
+      "precio": 90,
+      "stock": true
+    },
+    {
+      "id": 6,
+      "timestamp": 1645821962747,   
+      "nombre": "Botines Kelme Elite",
+      "descripcion": "Botines Kelme Elite Grises con Blanco",
+      "codigo": "BotinesKelme3",
+      "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765181/ProyectoReactJs/botinesKelmeElite_psvvlg.jpg",
+      "precio": 70,
+      "stock": true
+    },
+    {
+      "id": 7,
+      "timestamp": 1645821962747,   
+      "nombre": "Botines Umbro Pro 5",
+      "descripcion": "Botines Umbro Pro 5 Negros",
+      "codigo": "BotinesUmbro1",
+      "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765179/ProyectoReactJs/botinesUmbroPro5_bzauzo.jpg",
+      "precio": 55,
+      "stock": true
+    },
+    {
+      "id": 8,
+      "timestamp": 1645821962747,   
+      "nombre": "Botines Umbro Pro 5 Bump",
+      "descripcion": "Botines Umbro Pro 5 Bump Negros con Blanco",
+      "codigo": "BotinesUmbro2",
+      "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765179/ProyectoReactJs/botinesUmbroPro5Bump_czecdb.jpg",
+      "precio": 90,
+      "stock": true
+    },
+    {
+      "id": 9,
+      "timestamp": 1645821962747,   
+      "nombre": "Botines Umbro Sala Z",
+      "descripcion": "Botines Umbro Sala Z Blancos con Azul",
+      "codigo": "BotinesUmbro3",
+      "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765180/ProyectoReactJs/botinesUmbroSalaZ_veeirz.jpg",
+      "precio": 80,
+      "stock": true
+    }
+  ]

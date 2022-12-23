@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "timestamp": "",
+        "productos":[
+            {
+                "id": 1,
+                "timestamp": "",
+                "nombre": "Botines Munich Continental",
+                "descripcion": "Botines Munich Continental Blancos",
+                "codigo": "BotinesMunich1",
+                "imagen": "https://res.cloudinary.com/proyectofutsal/image/upload/v1665765181/ProyectoReactJs/botinesMunichContinental_wctv7q.jpg",
+                "precio": 120,
+                "stock": true
+            }
+        ]
+    }
+]
