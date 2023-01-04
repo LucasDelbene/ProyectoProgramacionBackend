@@ -1,4 +1,4 @@
-const {SQLite3Contenedor} = require('../contenedores/Contenedor.js');
+const {SQLite3Contenedor} = require('../contenedores/Contenedor');
 
 seleccionarTodosLosMensajes = async () => {
     try{
@@ -8,7 +8,7 @@ seleccionarTodosLosMensajes = async () => {
 
         return todosLosMensajes;
     }catch(err){
-        console.log(`Error: ${err}`);
+        console.log(`ERROR: ${err}`);
     }
 };
 seleccionarTodosLosMensajes();

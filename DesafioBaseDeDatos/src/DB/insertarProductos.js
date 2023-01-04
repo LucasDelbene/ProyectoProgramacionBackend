@@ -1,4 +1,4 @@
-const {MySQLContenedor} = require('../contenedores/Contenedor.js');
+const {MySQLContenedor} = require('../contenedores/Contenedor');
 
 insertarProducto = async(producto) =>{
     try{
@@ -11,7 +11,7 @@ insertarProducto = async(producto) =>{
         .from('productos');
         return todosLosProductos[todosLosProductos.length - 1]; 
     }catch(error){
-        console.log(`Error ${err}`);
+        console.log(`ERROR: ${err}`);
     }
 }
 

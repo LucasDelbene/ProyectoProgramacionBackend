@@ -1,9 +1,9 @@
-const {optionsMySQL} = require('../mysql.js');
-const {optionsSQLite3} = require('../sqlite.js');
+const {optionsMySQL} = require('../mysql');
+const {optionsSQLite3} = require('../sqlite');
 
 class Contenedor{
     constructor(config){
-        this.knex = require(`knex`)(config);
+        this.knex = require('knex')(config);
     }
     getKnex(){
         return this.knex;

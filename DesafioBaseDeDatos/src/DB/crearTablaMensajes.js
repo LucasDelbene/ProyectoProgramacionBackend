@@ -1,5 +1,5 @@
 //MENSAJES EN SQLite3//
-const {SQLite3Contenedor} = require('../contenedores/Contenedor.js');
+const {SQLite3Contenedor} = require('../contenedores/Contenedor');
 
 try{
     const mensajesTabla = await SQLite3Contenedor.getKnex().schema

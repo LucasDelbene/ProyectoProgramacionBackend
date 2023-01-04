@@ -1,5 +1,5 @@
 const {Router} = require("express");
-const {getChat} = require('../controller/chatController.js');
+const {getChat} = require('../controller/chatController');
 
 const rutaChat = Router();
 rutaChat.get('/', getChat);

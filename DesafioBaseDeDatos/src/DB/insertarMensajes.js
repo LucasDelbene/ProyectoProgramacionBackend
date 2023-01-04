@@ -1,4 +1,4 @@
-const {SQLite3Contenedor} = require('../contenedores/Contenedor.js');
+const {SQLite3Contenedor} = require('../contenedores/Contenedor');
 
 insertarMensaje = async(mensaje) =>{
     try{
@@ -6,7 +6,7 @@ insertarMensaje = async(mensaje) =>{
         .into('mensajes')
         .insert(mensaje);     
     }catch(error){
-        console.log(`Error ${err}`);
+        console.log(`ERROR: ${err}`);
     }
 }
 

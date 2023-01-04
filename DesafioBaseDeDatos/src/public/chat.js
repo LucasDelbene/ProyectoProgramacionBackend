@@ -7,7 +7,7 @@ const mensajesInput = document.getElementById('mensajeInput');
 const mensajesContainer = document.getElementById('mensajesContainer');
 
 //OBTENEMOS EL NOMBRE DE USUARIO DE LOS QUERY PARAMS//
-const {nombreUsuario} = Qs.parse(window.location.search, {
+const {nombreUsuario} = qs.parse(window.location.search,{
     ignoreQueryPrefix: true
 });
 
@@ -45,7 +45,7 @@ socket.on('usuarios', data => {
                     <img src=${usuario.avatar} alt="avatar">
                     <div class="about">
                         <div class="name"> ${usuario.nombreUsuario}</div>
-                        <div class="status"> <i class="fa fa-circle online"></i> Online </div>
+                        <div class="status"> <i class="fa fa-circle online"></i> ONLINE </div>
                     </div>
                 </li>
             `;

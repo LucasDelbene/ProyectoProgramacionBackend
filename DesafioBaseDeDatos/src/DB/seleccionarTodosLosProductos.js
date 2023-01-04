@@ -1,4 +1,4 @@
-const {MySQLContenedor} = require('../contenedores/Contenedor.js');
+const {MySQLContenedor} = require('../contenedores/Contenedor');
 
 seleccionarTodosLosProductos = async () => {
     try{
@@ -7,8 +7,8 @@ seleccionarTodosLosProductos = async () => {
             .from('productos');
 
         return todosLosProductos;
-    }catch (err){
-        console.log(`Error: ${err}`);
+    }catch(err){
+        console.log(`ERROR: ${err}`);
     }
 };
 

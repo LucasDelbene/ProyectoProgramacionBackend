@@ -23,11 +23,11 @@ const {seleccionarTodosLosMensajes} = require('./db/seleccionarTodosLosMensajes.
 const {insertarMensajes} = require('./db/insertarMensajes.js');
 
 //IMPORTACION DE RUTAS//
-const rutaInicio = require('./routers/rutaChat.js');
-const rutaFormulario = require('./routers/rutaFormulario.js');
-const rutaAccesoGet = require('./routers/rutaAccesoGet.js');
-const rutaAccesoPost = require('./routers/rutaAccesoPost.js');
-const rutaChat = require('./routers/rutaChat.js');
+const rutaInicio = require('./routers/rutaInicio');
+const rutaFormulario = require('./routers/rutaFormulario');
+const rutaAccesoGet = require('./routers/rutaAccesoGet');
+const rutaAccesoPost = require('./routers/rutaAccesoPost');
+const rutaChat = require('./routers/rutaChat');
 
 //RUTAS//
 app.use('/', rutaInicio);
