@@ -1,0 +1,4 @@
+//CREO UN OBJETO LA CUAL VA A TENER UN presets QUE ES UN CONJUNTO DE PLUGINS//
+{
+    "presets": ["@babel/preset-env"]
+}

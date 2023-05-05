@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO GENERICO - CHAT COLABORATIVO</title>
+    <script src="./socket.io/socket.io.js"></script>
+
+    <style>
+        .botonSubmit{
+            padding: 1.3em 3em;
+            margin: 50px;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #000;
+            background-color: #fff;
+            border: solid black;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
+        .usuariosConectados{
+            border: none;
+            border-radius: 10px;
+            width: 300px;
+        }
+        #contenedorChat.active>div:last-of-type, #contenedorChat>div:first-of-type{
+            display: block;
+        }
+        #contenedorChat>div:last-of-type, #contenedorChat.active>div:first-of-type{
+            display: none;
+        }
+
+        .tituloPrincipal{
+            text-align: center;
+            font-family: sans-serif;
+        }
+        #contenedorChat{
+            text-align: center;
+            max-width: 800px;
+            margin: 0px auto;
+            padding: 20px;
+            background-color: gray;
+            border: solid black;
+            border-radius: 10px;
+        }
+        .inputs{
+            border: none;
+            border-radius: 15px;
+            padding: 15px;
+            background-color: black;
+        }
+        #parrafoChat{
+            background-color: #e2e2e2; 
+            color:black; 
+            padding: 20px 25px;
+        }
+    </style>
+</head>
+
+<body style="margin-top: 50px;">
+    <h1 class="tituloPrincipal">Bienvenidos a mi primer Chat con WebSocket</h1>    
+    <div id="contenedorChat">
+        <div>
+            <form id="dataUsuario">
+                <div class="inputs">
+                    <input type="text" name="nombreUsuario" placeholder="Ingrese su Nombre">
+                    <input type="text" name="emailUsuario" placeholder="Ingrese su Email">
+                </div>
+                <input class="botonSubmit" type="submit" value="INGRESAR AL CHAT">
+            </form>
+        </div>
+
+        <div>
+            <div style="text-align: start;">
+                <div>
+                    <input type="text" name="textoInput" id="textoInput" placeholder="INGRESA TU MENSAJE">
+                    <button id="enviarSocket">ENVIAR</button>
+                    <p id="parrafoChat"></p>
+                </div>
+                <div class="usuariosConectados">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let socket = null;
+    let usuario = null;
+    
+    //CONTENEDOR CHAT//
+    let contenedorChat = document.getElementById("contenedorChat");
+    //TEXTO INPUT//
+    let textoInput = document.getElementById("textoInput"); 
+    //ENVIAR SOCKET//
+    let enviarSocket = document.getElementById("enviarSocket");
+    //PARRAFO CHAT//
+    let parrafoChat = document.getElementById("parrafoChat");
+
+    //FORMULARIO USUARIO//
+    let formularioUsuario = document.getElementById("dataUsuario");
+    formularioUsuario.addEventListener("submit", event =>{
+        event.preventDefault(); //USO event.preventDefault PARA QUE NO ME SOBRECARGUE LA PAGINA
+        usuario = {
+            nombre: event.target[0].value,
+            email: event.target[1].value
+        }
+
+        if(usuario.nombre == "" || usuario.nombre == "")window.location.reload(); //EN EL CASO QUE usuario.nombre ESTE VACIO, SE RECARGARA LA PAGIN CON window.location.reload()//
+        socket = io();
+        socket.emit("agregarUsuario", usuario); //ENVIO agregarUsuario// 
+        contenedorChat.classList = "active";
+        readSockets();
+    });
+
+    //CREO LA FUNCION readSockets() PARA LEER TODA LA INFORMACION//
+    function readSockets(){
+        cargarChat();
+
+        socket.on("escuchandoServidor", data =>{
+            console.log("Recibiendo", data);
+            cargarData(data);
+        })
+    }
+
+    //CREO LA FUNCION cargarChat(), CON LA CUAL VAMOS A PODER ACCEDER AL HISTORIAL DE SOCKETS//
+    function cargarChat(){
+        socket.on("init", data =>{
+            cargarData(data);
+        })
+
+        socket.on("cargarUsuarios", data =>{
+            console.log("Evento Carga de Usuarios", data);
+        })
+    }
+
+    //CREO LA FUNCION cargarData()//
+    function cargarData(data){
+        let innerP = ``;
+        data.forEach(element =>{
+            innerP += `<b>${element.nombre}:</b> ${element.mensaje} <br/>`
+        });
+        parrafoChat.innerHTML = innerP
+    }
+
+    //CREO UN EVENTO enviarSocket CON addEventListener()//
+    enviarSocket.addEventListener("click", event =>{
+        let enviarMensaje = {
+            ...usuario,
+            mensaje: textoInput.value
+        }
+        socket.emit("mensaje", enviarMensaje); 
+        textoInput.value = ""; //LUEGO DE ENVIAR EL MENSAJE, EL TEXTO INPUT QUEDARA VACIO
+    })
+</script>
+</html>

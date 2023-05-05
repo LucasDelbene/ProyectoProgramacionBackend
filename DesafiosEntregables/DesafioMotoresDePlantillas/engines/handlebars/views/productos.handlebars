@@ -1,0 +1,21 @@
+<h2 class="text-light m-3 me-auto">PRODUCTOS</h2>
+<br>
+{{#if length}}
+    <div class="table-responsive">
+        <table class="table table-dark">
+            <tr> 
+               <th class="text-center text-light">ID</th>
+               <th class="text-center text-light">NOMBRE</th>
+               <th class="text-center text-light">PRECIO</th>
+            </tr>
+            {{#each productos}}
+                <tr>
+                    <td class="text-center text-light">{{this.id}}</td>
+                    <td class="text-center text-light">{{this.nombre}}</td>
+                    <td class="text-center text-light">{{this.precio}}</td>
+                </tr>
+            {{/each}}
+        </table>
+    </div>
+{{/if}}
+<a href="/"><button class="btn btn-outline-light">IR AL FORMULARIO DE CARGA</button></a>

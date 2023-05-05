@@ -1,0 +1,26 @@
+//DESAFIO GENERICO - EXPRESS y MULTER//
+
+//CREARE UN SERVIDOR QUE PERMITA ELEGIR y SUBIR UN ARCHIVO UTILIZANDO UN FORMULARIO SERVIDO DESDE SU ESPACIO PUBLICO//
+//DICHO ARCHIVO SE ALMACENARA EN UNA CARPETA PROPIA DEL SERVIDOR LLAMADA 'uploads'//
+//EL NOMBRE DEL ARCHIVO GUARDADO SE FORMARA CON EL NOMBRE ORIGINAL ANTEPONIENDOLE UN timestamp(Date.now()) SEGUIDO CON UN GUION//
+//UTILIZO express y multer EN UN PROYECTO DE SERVIDOR QUE SE ESCUCHA EN EL PUERTO 8080//
+
+//REQUIERO express PARA PODER UTILIZARLO//
+const express = require('express');
+const app = express();
+
+//DECLARO ESTO PARA QUE NUESTRO SERVIDOR INTERPRETE DE FORMA AUTOMATICA MENSAJES DE TIPO JSON EN FORMATO urlencoded AL RECIBIRLOS//
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
+
+//UTILIZO express.static PARA PODER BUSCAR LOS ARCHIVOS RELATIVOS AL DIRECTORIO ESTATICO COMO POR EJEMPLO IMAGENES, ARCHIVOS CSS o JS//
+app.use('/', express.static('public'));     //CARPETA 'public'
+app.use(express.static('html'));            //CARPETA 'html'
+
+//CREO UNA VARIABLE LLAMADA serverRutas LA CUAL ES EL CONTROLADOR DE RUTAS//
+let serverRutas = require('./routes');
+serverRutas(app);
+
+//CONEXION AL SERVIDOR//
+const PUERTO = 8080;
+app.listen(PUERTO, ()=> console.log(`Servidor escuchandose en http://localhost:${PUERTO}`))

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <%- include(`./partials/head`) %>
+</head>
+
+<body>
+    <div class ="container">
+        <header>
+            <%- include('./partials/header', {current: 'inicio'}) %> 
+        </header>
+        
+        <main>
+            <div class="jumbotron">
+                <h1 style="text-align: center; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">DESAFIO ENTREGABLE - NUESTRA PRIMERA BASE DE DATOS</h1>
+            </div>
+
+            <div>
+                <p style="text-align: center;">EN ESTE SITIO WEB SE PODRAN INGRESAR PRODUCTOS y CHATEAR EN TIEMPO REAL</p>
+            </div>
+        </main>
+        
+        <footer> <%- include('./partials/footer') %>  </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('./partials/header') %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <%- include('./partials/header', {current: 'formularioProductos'}) %>
+  </header>
+
+  <main>
+    <div class="jumbotron">
+      <div class="jumbotron">
+        <form action="/registro" method="POST" enctype="multipart/form-data">
+          <h1 class="display-4">REGISTRARSE</h1>
+
+          <p>USUARIO</p>
+          <div class="form-group">
+            <input type="text" id="typeEmailX" name="username" class="form-control form-control-lg" required
+              minlength="3" />
+          </div>
+
+          <p>CONTRASEÑA</p>
+          <div class="form-group">
+            <input type="password" id="typeEmailX" name="contraseña" class="form-control form-control-lg" required
+              minlength="3" />
+          </div>
+
+          <p>EMAIL</p>
+          <div class="form-group">
+            <input type="email" id="typeEmailX" name="email" class="form-control form-control-lg" required
+              minlength="3" />
+          </div>
+
+          <p>TELEFONO</p>
+          <div class="form-group">
+            <input type="phone" id="typeEmailX" name="telefono" class="form-control form-control-lg" required
+              minlength="12" />
+          </div>
+
+          <p>EDAD</p>
+          <div class="form-group">
+            <input type="number" id="typeEmailX" name="edad" class="form-control form-control-lg" required
+              minlength="2" />
+          </div>
+
+          <p>DIRECCION</p>
+          <div class="form-group">
+            <input type="text" id="typeEmailX" name="direccion" class="form-control form-control-lg" required
+              minlength="5" />
+          </div>
+
+          <p>FOTO</p>
+          <div> <input type="file" id="typeEmailX" name="avatar" required /> </div>
+
+          <br>
+          <button class="btn btn-primary" type="submit">REGISTRARSE</button>
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <%- include('./partials/footer') %>
+  </footer>
+
+</body>
+
+</html>

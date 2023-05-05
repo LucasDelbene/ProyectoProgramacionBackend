@@ -1,0 +1,83 @@
+#YAML ES UN FORMATO DE ARCHIVO PARA ALMACENAR DATOS DE MANERA LEGIBLE PARA HUMANOS. EL ARCHIVO videogames.yaml ES UN ARCHIVO YAML QUE CONTIENE INFORMACION SOBRE VIDEOJUEGOS#
+
+#ESTE CODIGO ES UN FRAGMENTO DE UN ARCHIVO DE DEFINICION DE ESQUEMAS PARA UNA API REST. DEFINE UN ESQUEMA LLAMADO baseVideogame QUE DESCRIBE LAS PROPIEDADES DE UN VIDEOJUEGO (ID, TITLE, DESCRIPTION y PRICE). LAS PROPIEDADES TIENEN DIFERENTES TIPOS DE DATOS, COMO STRING y NUMBER#
+components:
+  schemas:
+    baseVideogame:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: ID AUTOGENERADO POR MONGO
+        title:
+          type: string
+          description: NOMBRE DEL VIDEOJUEGO
+        description:
+          type: string
+          description: DESCRIPCION DEL VIDEOJUEGO
+        price: 
+          type: number
+          description: PRECIO DEL VIDEOJUEGO 
+
+#ESTE CODIGO DESCRIBE UNA API REST PARA UN SERVICIO DE VIDEOJUEGOS. TIENE DOS METODOS: GET (OBTENER VIDEOJUEGOS DE LA BASE DE DATOS) y POST (CREAR NUEVO VIDEOJUEGO). EL METODO GET DEVUELVE UNA LISTA DE VIDEOJUEGOS EN FORMATO JSON y EL METODO POST ACEPTA DATOS DE FORMULARIO EN FORMATO multipart/form-data y CREA UN NUEVO VIDEOJUEGO EN LA BASE DE DATOS. LAS PROPIEDADES DEL VIDEOJUEGO SON TITULO, DESCRIPCION, CODIGO UNICO PRECIO e IMAGEN EN FORMATO BINARIO. EL CODIGO TAMBIEN INCLUYE DESCRIPCIONES y RESPUESTAS DE ERROR EN CASO DE QUE ALGO SALGA MAL#
+paths:
+  /api/videogames:
+
+    #METODO GET#  
+    get:
+     summary: OBTIENE LOS VIDEOJUEGOS DE LA BASE DE DATOS 
+     tags: 
+      - VIDEOJUEGOS
+     responses:
+     "200":
+        description: VIDEOJUEGOS OBTENIDOS EXITOSAMENTE
+        content:
+          application/json:
+            schema:
+              type: object
+              propierties:
+                status:
+                  type: string
+                  description: 'EXITO' o 'ERROR' SEGUN SEA EL CASO
+                payload: 
+                  type: array
+                  description: ARREGLO CON LOS VIDEOJUEGOS
+                  items: 
+                    $ref: '#/components/schema/baseVideogame'
+    
+    #METODO POST# 
+    post:
+      summary: CREA UN NUEVO VIDEOJUEGO EN LA BASE DE DATOS 
+      tags: 
+        - VIDEOJUEGOS
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                title:
+                  required: true
+                  type: string
+                  description: NOMBRE DEL VIDEOJUEGO
+                description:
+                  required: true
+                  type: string
+                  description: DESCRIPCION DEL VIDEOJUEGO
+                code:
+                  required: true
+                  type: string
+                  description: CODIGO UNICO DEL VIDEOJUEGO
+                price:
+                  required: true
+                  type: number
+                  description: PRECIO DEL VIDEOJUEGO    
+                image:
+                  required: true
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          summary: VIDEOJUEGO AGREGADO EXITOSAMENTE                                       
+ 

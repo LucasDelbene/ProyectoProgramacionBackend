@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO GENERICO - DATOS PERSONALES (CLASE 9)</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+</head>
+
+<body>
+    <hr>
+    <div id="main"></div>
+    <hr>
+</body>
+
+<script>
+    console.log('MENSAJE DE QUE FUNCIONA PERFECTAMENTE')
+    //TENGO QUE REALIZAR UNA PAGINA WEB QUE ME PERMITA MOSTRAR DATOS PERSONALES DE LA SIGUIENTE FORMA//
+    let templateString = `
+    <h1>DATOS PERSONALES</h1> 
+    <ul>
+        <li>{{nombre}}</li>
+        <li>{{apellido}}</li>
+        <li>{{edad}}</li>
+        <li>{{email}}</li>
+        <li>{{telefono}}</li>
+    </ul>`;
+
+    //AGREGO LA INFORMACION DE LOS DATOS PERSONALES//
+    let data = {
+        nombre: "Lucas",
+        apellido: "Delbene",
+        edad: "20",
+        email: "LucasDelbene@gmail.com",
+        telefono: "3435233460"
+    }
+
+    //TRAIGO EL MOTOR DE PLANTILLAS HANDLEBARS//
+    let template = Handlebars.compile(templateString);
+    const html = template(data);
+    document.getElementById('main').innerHTML = html;
+</script>
+</html>

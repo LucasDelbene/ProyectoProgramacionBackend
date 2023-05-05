@@ -1,0 +1,5 @@
+RUTA y METODO DE LAS PETICIONES A RUTAS INEXISTENTES EN EL SERVIDOR (WARNING)
+
+[2023-03-29T19:30:15.998] [WARN] warnArchive - Estado: 404, Ruta consultada: /info, METODO GET            (EJEMPLO)
+[2023-03-29T19:31:38.889] [WARN] warnArchive - Estado: 404, Ruta consultada: /api/productos, METODO GET   (EJEMPLO)
+[2023-03-29T19:32:58.654] [WARN] warnArchive - Estado: 404, Ruta consultada: /api/mensajes, METODO POST   (EJEMPLO)

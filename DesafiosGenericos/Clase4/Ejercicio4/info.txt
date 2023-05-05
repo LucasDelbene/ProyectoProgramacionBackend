@@ -1,0 +1,18 @@
+{
+  "contenidoString": "{\n  \"name\": \"ejercicio4\",\n  \"version\": \"1.0.0\",\n  \"description\": \"\",\n  \"main\": \"Ejercicio4.js\",\n  \"scripts\": {\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"keywords\": [],\n  \"author\": \"\",\n  \"license\": \"ISC\",\n  \"dependencies\": {\n    \"moment\": \"^2.29.4\"\n  }\n}\n",
+  "contenidoObjeto": {
+    "name": "ejercicio4",
+    "version": "1.0.0",
+    "description": "",
+    "main": "Ejercicio4.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "moment": "^2.29.4"
+    }
+  }
+}

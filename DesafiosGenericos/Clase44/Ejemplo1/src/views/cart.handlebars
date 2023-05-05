@@ -1,0 +1,17 @@
+<div>
+    {{#if games}}
+    <h1>HOLA {{name}}, ESTE ES TU CARRITO ACTUAL</h1>
+
+    {{#each games}}
+    <div>
+        <p>{{this.title}}</p>
+        <p>{{this.price }}</p>
+    </div>
+    {{/each}}
+
+    <a href="/">SEGUIR COMPRANDO</a>
+    {{else}}
+    <h1>NO HAY VIDEOJUEGOS EN TU CARRITO</h1>
+    <a href="/">EMPIEZA A COMPRAR VIDEOJUEGOS</a>
+    {{/if}}
+</div>

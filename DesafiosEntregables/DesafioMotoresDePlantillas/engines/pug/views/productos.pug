@@ -1,0 +1,25 @@
+doctype
+html(lang='en')
+    head
+        meta(charset='utf-8')
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+            integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous")
+        title='Lista de productos'
+    body(class='bg-dark')
+        h2(class='text-light m-3 me-auto') Productos
+        if productos.length > 0
+            div(class='table-responsive')
+                table(class='table table-dark')
+                    tr 
+                        th(class='text-center text-light') ID
+                        th(class='text-center text-light') Nombre 
+                        th(class='text-center text-light') Precio 
+                    each producto in productos 
+                        tr 
+                            td(class='text-center text-light')= producto.id
+                            td(class='text-center text-light')= producto.name 
+                            td(class='text-center text-light')= producto.price
+        else 
+            h3(class='alert, alert-danger') No se encontraron datos.
+        a(href="./")
+            button(class='btn btn-outline-light') Ir a formulario

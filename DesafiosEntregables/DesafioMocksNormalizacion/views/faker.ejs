@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <%- include('./partials/header', {current: 'faker'}) %>
+        </header>
+        <main>
+            <div class="jumbotron">
+                <h2 class="fw-bold mb-2 text-uppercase">DATOS CON FAKER</h2>
+                <p>DATOS ALEATORIOS UTILIZANDO FAKER</p>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col">IMAGEN</th>
+                    </tr>
+                </thead>
+                <tbody id="tbodyProductos">
+                    <% dataRandom.forEach((producto)=> { %>
+                        <tr>
+                            <td>
+                                <%= producto.nombre%>
+                            </td>
+
+                            <td>
+                                <%= producto.precio%>
+                            </td>
+
+                            <td>
+                                <img src=<%= producto.imagen %> width="50" height="50">
+                                
+                            </td>
+
+                        </tr>
+                    <% }) %>
+
+                </tbody>
+            </table>
+
+        </main>
+
+        <footer>
+            <%- include('./partials/footer') %>
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.3/qs.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./formularioProductos.js"></script>
+</body>
+
+</html>

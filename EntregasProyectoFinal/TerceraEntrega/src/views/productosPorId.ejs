@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/headerLogueado', {current: 'formularioProductos'}) %>
+    </header>
+
+    <div class="jumbotron">
+        <div class="jumbotron">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NOMBRE</th>
+                        <th scope="col">DESCRIPCION</th>
+                        <th scope="col">PRECIO</th>
+                        <th scope="col">STOCK</th>
+                        <th scope="col">IMAGEN</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <th scope="row">
+                            <%= productoPorId.id %>
+                        </th>
+                        <td>
+                            <%= productoPorId.nombre %>
+                        </td>
+                        <td>
+                            <%= productoPorId.descripcion %>
+                        </td>
+                        <td>
+                            $<%= productoPorId.precio %>
+                        </td>
+                        <td>
+                            <%= productoPorId.stock %>
+                        </td>
+                        <td>
+                            <img src="<%= productoPorId.thumbnail %>" width="60" height="60">
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+
+</body>
+
+</html>

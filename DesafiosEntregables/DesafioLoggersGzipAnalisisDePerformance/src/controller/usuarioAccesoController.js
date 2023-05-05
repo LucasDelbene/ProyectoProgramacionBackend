@@ -1,0 +1,6 @@
+//CONTROLADOR USUARIO LOGIN//
+const usuarioAcceso = (peticion, respuesta) => {
+    const {nombreUsuario} = peticion.body;
+    return respuesta.redirect(`/chat?nombreUsuario=${nombreUsuario}`);
+};
+export default usuarioAcceso;

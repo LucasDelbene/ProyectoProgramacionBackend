@@ -1,0 +1,32 @@
+<div>
+    {{#if videogames}}
+    <h1>ULTIMOS JUEGOS AGREGADOS</h1>
+    {{#each videogames}}
+    <div>
+        <p>{{this.title}}</p>
+        <p>{{this.price}}</p>
+        <img src={{this.image}}>
+        
+        {{#if this.isValidToAdd}}
+        <a href="http://localhost:8080/api/carts/videogame/{{this._id}}"><button>AGREGAR AL CARRITO</button></a>
+        {{else}}
+        <button disabled>EL VIDEOJUEGO YA ESTA EN EL CARRITO</button>
+        {{/if}}
+    </div>
+
+    <div>
+        {{#if paginationData.hasPrevPage}}
+        <a href="http://localhost:8080?page={{paginationData.prevPage}}"><button>ANTERIOR</button></a>
+        {{/if}}
+
+        <p>{{paginationData.page}}</p>
+
+        {{#if paginationData.hasNextPage}}
+        <a href="http://localhost:8080?page={{paginationData.nextPage}}"><button>SIGUIENTE</button></a>
+        {{/if}}
+    </div>
+    {{/each}}
+    {{else}}
+    <h1>NO HAY JUEGOS PARA MOSTRAR</h1>
+    {{/if}}
+</div>

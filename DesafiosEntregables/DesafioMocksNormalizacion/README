@@ -1,0 +1,37 @@
+DESAFIO ENTREGABLE MOCKS y NORMALIZACION 
+
+(CONSIGNA 1)
+Sobre el desafio entregable de la Clase 16, crear una vista en forma de tabla que consuma desde la ruta '/api/productos-test' del servidor una lista con 5 productos generados al azar utilizando Faker.js como generador de informacion aleatoria de test (en lugar de tomarse desde la base de datos). Elegir apropiadamente los temas para conformar el objeto 'producto' (nombre, precio y foto). 
+
+(CONSIGNA 2)
+Ahora, vamos a reformar el formato de los mensajes y la forma de comunicacion del chat (centro de mensajes). El nuevo formato de mensaje sera:
+
+{
+ author:{
+   id: 'mail del usuario',
+   nombre: 'nombre del usuario',
+   apellido: 'apellido del usuario',
+   edad: 'edad del usuario',
+   alias: 'alias del usuario',
+   avatar: 'avatar del usuario'
+ },
+ text: 'mensaje del usuario'
+}
+
+(ASPECTOS A INCLUIR EN EL ENTREGABLE)
+
+1) Modificar la persistencia de los mensajes para que utilicen un contenedor que permita guardar objetos anidados (archivos, mongodb, firebase)
+
+2) El mensaje se envia del frontend hacia el backend, el cual lo almacenara en la base de datos elegida. Luego cuando el cliente se conecte o envie un mensaje, recibira un array de mensajes a representar en su vista.
+
+3) El array que se devuelve debe estar normalizado con normalizr, conteniendo una entidad de autores. Considerar que el array tiene sus autores con su correspondiente id (mail del usuario), pero necesita incluir para el proceso de normalizacion un id para todo el array en su conjunto (podemos asignarle nosotros un valor fijo). Ejemplo: {id:'mensajes', mensajes:[]}
+
+4) El frontend deberia poseer el mismo esquema de normalizacion que el backend, para que este pueda desnormalizar y presentar la informacion adecuada en la vista.
+
+5) Considerar que se puede cambiar el nombre del id que usar normalizr, agregando un tercer parametro a la funcion schema.Entity, por ejemplo: const schemaAuthor = new schema.Entity('author', {...}, {idAttribute: 'email'}). En este schema cambia el nombre del id con que se normaliza el nombre de los autores a 'email'.
+
+6) Presentar en el frontend (a modo de test) el porcentaje de compresion de los mensajes recibidos. Puede ser en el titulo del centro de mensajes.
+
+(NOTA)
+
+Incluir en el frontend el script de normalizr de la siguiente cdn: https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js asi podremos utilizar los mismos metodos de normalizr que en el backend. Por ejemplo: new normalizr.schema.Entity, normalizr.denormalize(..., ..., ...)

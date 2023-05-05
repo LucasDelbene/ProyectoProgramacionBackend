@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('./partials/head') %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <%- include('./partials/headerLogueado') %>
+  </header>
+
+  <div class="jumbotron">
+    <div class="jumbotron">
+      <form action="/api/productos" method="POST">
+        <h2 class="display-4">AGREGAR PRODUCTO</h2>
+        <br>
+        
+        <p>NOMBRE:</p>
+        <div class="form-group">
+          <input type="text" id="typeEmailX" name="nombre" class="form-control form-control-lg" required
+            minlength="3" />
+        </div>
+
+        <p>PRECIO:</p>
+        <div class="form-group">
+          <input type="number" id="typeEmailX" name="precio" class="form-control form-control-lg" required
+            minlength="3" />
+        </div>
+
+        <p>DESCRIPCION:</p>
+        <div class="form-group">
+          <input type="text" id="typeEmailX" name="descripcion" class="form-control form-control-lg" required
+            minlength="3" />
+        </div>
+
+        <p>CODIGO:</p>
+        <div class="form-group">
+          <input type="text" id="typeEmailX" name="codigo" class="form-control form-control-lg" required
+            minlength="3" />
+        </div>
+
+        <p>STOCK:</p>
+        <div class="form-group">
+          <input type="number" id="typeEmailX" name="stock" class="form-control form-control-lg" required
+            minlength="3" />
+        </div>
+
+        <p>IMAGEN (URL):</p>
+        <div class="form-group">
+          <input type="text" id="typeEmailX" name="thumbnail" class="form-control form-control-lg" required
+            minlength="3" />
+        </div>
+
+        <button class="btn btn-primary" type="submit">AGREGAR</button>
+      </form>
+    </div>
+
+  </div>
+
+
+</body>
+<footer>
+  <%- include('./partials/footer') %>
+</footer>
+</div>
+
+</html>

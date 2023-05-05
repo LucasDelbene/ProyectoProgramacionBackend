@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <%- include('./partials/header', {current: 'info'}) %>
+        </header>
+
+        <main>
+            <div class="jumbotron">
+                <h2 class="fw-bold mb-2 text-uppercase" style="text-align: center;">INFORMACION DE LOS DATOS DEL PROCESO</h2>
+            </div>
+
+            <div style="margin:100px 5px; font-size:small; width:10%; text-align: left;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Directorio actual</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Version node</th>
+                            <th scope="col">Ruta del ejecutable</th>
+                            <th scope="col">Sistema operativo</th>
+                            <th scope="col">Uso de memoria</th>
+                        </tr>
+                    </thead>
+    
+                    <tbody id="tbodyProductos">
+    
+                        <tr>
+                            <td>
+                                <%= directorioActual %>
+                            </td>
+    
+                            <td>
+                                <%= idProceso %>
+                            </td>
+    
+                            <td>
+                                <%= versionNode %>
+                            </td>
+    
+                            <td>
+                                <%= rutaEjecutable %>
+                            </td>
+    
+                            <td>
+                                <%= sistemaOperativo %>
+                            </td>
+    
+                            <td>
+                                <%= memoria %>
+                            </td>
+    
+                        </tr>
+    
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <footer>
+            <%- include('./partials/footer') %>
+        </footer>
+    </div>
+
+</body>
+
+</html>

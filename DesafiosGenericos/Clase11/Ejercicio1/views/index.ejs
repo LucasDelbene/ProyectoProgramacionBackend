@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO GENERICO - SERVIDOR CON WEBSOCKET</title>
+    <script src="./socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Bienvenidos a mi primer Servidor con WebSocket</h1>
+    <input type="text" name="name" id="name" style="margin: 0px 42.5rem; background-color:aquamarine;">
+    <p id="parrafo"></p>
+</body>
+
+<script>
+    let socket = io();
+    socket.on("init", data =>{
+        console.log(`Me han enviado un mensaje desde el Servidor`);
+        console.log(data);
+    })
+
+    let name = document.getElementById("name");
+    name.addEventListener("keyup", event =>{
+        console.log(event.target.value);
+        socket.emit("keyup", event.target.value);
+    })
+
+    let parrafo = document.getElementById("parrafo");
+    socket.on("llenarParrafo", data =>{
+        parrafo.innerHTML = data;;
+        console.log(data);
+    })
+</script>
+</html>
+

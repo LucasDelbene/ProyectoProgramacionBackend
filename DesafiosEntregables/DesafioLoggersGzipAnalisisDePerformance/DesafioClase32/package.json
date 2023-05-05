@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "name": "desafioclase32",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "artillery": "^2.0.0-31",
+    "crypto": "^1.0.1",
+    "express": "^4.18.2",
+    "express-compression": "^1.0.2",
+    "winston": "^3.8.2"
+  }
+}

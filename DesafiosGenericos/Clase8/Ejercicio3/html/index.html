@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO GENERICO - EXPRESS y MULTER</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="two-forms" style="display:flex; justify-content:space-between; align-items:center; max-width:1120px; margin:50px auto; width: 100%;">
+        <form style="width: 40%;" action="http://localhost:8080/personas/archivo" method="POST" enctype="multipart/form-data" name="upload_img_form">
+            <div class="mb-3">
+                <label class="form-label" for="customFile">UN ARCHIVO</label>
+                <input type="file" class="form-control" id="customFile" name="file"/>
+            </div>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+        </form>
+
+        
+        <form style="width: 40%;" action="http://localhost:8080/personas/archivos" method="POST" enctype="multipart/form-data" name="upload_img_form">
+            <div class="mb-3"><label class="form-label" for="customFile">MULTIPLES ARCHIVOS</label>
+            <input type="file" class="form-control" id="customFile" multiple name="files"/></div>
+            <button type="submit" class="btn btn-primary">SUBMIT</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item  <% if (current == 'inicio') { %> active <% } %> ">
+          <a class="nav-link" href="/">INICIO <span class="sr-only">(current)</span></a>
+        </li>
+  
+        <li class="nav-item  <% if (current == 'formularioProductos') { %> active <% } %> ">
+          <a class="nav-link" href="/formulario">PRODUCTOS</a>
+        </li>
+        
+        <li class="nav-item  <% if (current == 'acceso') { %> active <% } %> ">
+          <a class="nav-link" href="/acceso">CHAT</a>
+        </li>
+
+        <li class="nav-item  <% if (current == 'loginSession') { %> active <% } %> ">
+          <a class="nav-link" href="/loginSession" style="margin-left: 720px;">INICIAR SESION</a>
+        </li>
+      </ul>
+  
+    </div>
+</nav>

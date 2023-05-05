@@ -1,0 +1,27 @@
+<br><br>
+<div>
+    <h2 style="color:black; text-align:center; margin-top:20px; font-size:x-large;">HISTORIAL DE PERSONAS</h2>
+    <% if (personas.length > 0) { %>
+        <table class="table table-striped table-hover" style="margin-top:15px;">
+            <thead>
+                <tr>
+                    <th space="col">NOMBRE</th>
+                    <th space="col">APELLIDO</th>
+                    <th space="col">EDAD</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% for(persona of personas) { %>
+                    <tr>
+                        <th><%= persona.nombre %> </th>
+                        <th><%= persona.apellido %> </th>
+                        <th><%= persona.edad %> </th>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    <% } else {%>
+        <p class="alert alert-primary" style="margin-top:10px;">NO SE ENCONTRO INFORMACION</p>
+    <% } %>
+</div>
