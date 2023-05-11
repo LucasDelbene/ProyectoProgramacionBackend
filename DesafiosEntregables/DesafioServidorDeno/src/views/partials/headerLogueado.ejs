@@ -1,0 +1,35 @@
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+  
+        <a class="navbar-brand" href="#">CODERHOUSE</a>
+  
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+  
+            <li class="nav-item  %> ">
+              <a class="nav-link" href="/api/productos">All products</a>
+            </li>
+  
+            <% if(usuarioLogueado.admin) { %>
+              <li class="nav-item   %> ">
+                <a class="nav-link" href="/formularioAgregarProducto">AGREGAR PRODUCTOS</a>
+              </li>
+              <% } %>
+  
+                <li class="nav-item  %> ">
+                  <a class="nav-link" href="/api/carrito">CARRITO</a>
+                </li>
+  
+                <li class="nav-item   %> ">
+                  <a class="nav-link" href="/perfil"><%= usuarioLogueado.username %></a>
+                </li>
+  
+                <li class="nav-item  %> ">
+                  <a class="nav-link" href="/cerrarSesion">CERRAR SESION</a>
+                </li>
+  
+          </ul>
+        </div>
+      </div>
+</nav>
