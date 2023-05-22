@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+</head>
+
+<body>
+    <header>
+        <%- include('./partials/headerLog', {current: `formProductos`}) %>
+    </header>
+
+    <div class="jumbotron">
+        <div class="jumbotron">
+            <% if (allProducts.length <=0) { %>
+                <p>NO SE ENCONTRARON PRODUCTOS</p>
+                <% } else { %>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">NOMBRE</th>
+                                <th scope="col">DESCRIPCIÓN</th>
+                                <th scope="col">PRECIO</th>
+                                <th scope="col">STOCK</th>
+                                <th scope="col">IMÁGEN</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% allProducts.forEach(product=>{ %>
+                                <tr>
+                                    <td scope="row">
+                                        <%= product.id %>
+                                    </td>
+                                    <td>
+                                        <%= product.nombre %>
+                                    </td>
+                                    <td>
+                                        <%= product.descripcion %>
+                                    </td>
+                                    <td>
+                                        $<%= product.precio %>
+                                    </td>
+                                    <td>
+                                        <%= product.stock %>
+                                    </td>
+                                    <td>
+                                        <img src="<%= product.thumbnail %>" width="60" height="60">
+                                    </td>
+                                    <td>
+                                        <form action="/api/carrito/addProduct" method="POST">
+                                            <input type="hidden" name="idUser" value=<%=userLog._id %> />
+                                            <input type="hidden" name="idProduct" value=<%=product.id %> />
+                                            <button class="btn btn-primary" type="submit">AGREGAR AL CARRITO</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                        </tbody>
+                    </table>
+                    <% } %>
+        </div>
+    </div>
+
+    <footer>
+        <%- include('./partials/footer') %>
+    </footer>
+
+</body>
+
+</html>

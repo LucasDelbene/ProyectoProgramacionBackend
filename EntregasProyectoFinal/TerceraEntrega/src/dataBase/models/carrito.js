@@ -10,6 +10,5 @@ const schemaCarrito = new mongoose.Schema({
     productos:{type:Array, required:true},
     dueño:{type:Object, require:true}
 });
-
 const carritoModel = mongoose.model(collectionCarrito,schemaCarrito);
 export default carritoModel;
