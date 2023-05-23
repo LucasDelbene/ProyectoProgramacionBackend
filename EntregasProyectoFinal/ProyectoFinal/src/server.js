@@ -49,11 +49,11 @@ import {loginRouter} from './routes/userRouter.js';
 import {signupRouter} from './routes/userRouter.js';
 import {logoutRouter} from './routes/userRouter.js';
 import {profileRouter} from './routes/userRouter.js';
-import viewsRouter from './routes/generalViewsRouter.js';
+import generalViewsRouter  from './routes/generalViewsRouter.js';
 import ordenesRouter from './routes/ordenesRouter.js';
 
 //RUTAS//
-app.use('/', viewsRouter);
+app.use('/', generalViewsRouter);
 app.use('/api/productos', isLogged, productosRouter);
 app.use('/api/carrito', isLogged, carritoRouter);
 app.use('/api/ordenes', isLogged, ordenesRouter);

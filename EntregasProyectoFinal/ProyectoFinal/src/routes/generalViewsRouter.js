@@ -6,7 +6,7 @@ import {homeController, signupController, bienvenidaController, viewFormAddProdu
 
 //MIDDLEWARE DE isLogged//
 const isLogged = ((peticion,respuesta,next)=>{
-    let msgError = `PARA ACCEDER A ESTA URL DEBES INICIAR SESIÓN`
+    const msgError = `PARA ACCEDER A ESTA URL DEBES INICIAR SESIÓN`
     if(peticion.user){
         next();
     }else{

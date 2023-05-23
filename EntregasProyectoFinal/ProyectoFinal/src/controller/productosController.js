@@ -6,6 +6,7 @@ const productsStorage  = storage().productos;
 
 //FUNCION PARA AGREGAR PRODUCTO//
 const addProduct = async (peticion,respuesta)=>{
+    const userLog = peticion.user;
     if(userLog.admin){
         try{
             const name = peticion.body.nombre;
@@ -27,7 +28,6 @@ const addProduct = async (peticion,respuesta)=>{
                 cantidad: 0
             };
             const id = await productsStorage.save(newProduct);
-
             return respuesta.redirect('/api/productos');
         }catch(error){
             return respuesta.status(404).json({
@@ -39,7 +39,7 @@ const addProduct = async (peticion,respuesta)=>{
             error: `RUTA NO PERMITIDA, NO SOS USUARIO CON PERFIL ADMINISTRADOR`
         });
     }
-}
+};
 
 //FUNCION PARA OBTENER TODOS LOS PRODUCTOS//
 const getAllProducts = async (peticion,respuesta)=>{
@@ -77,6 +77,7 @@ const getProductById = async (peticion,respuesta)=>{
 
 //FUNCION PARA ACTUALIZAR PRODUCTO POR ID//
 const updateProductById = async (peticion,respuesta)=>{
+    const userLog = peticion.user;
     if(userLog.admin){
         try{
             const idProduct = peticion.params.id;
