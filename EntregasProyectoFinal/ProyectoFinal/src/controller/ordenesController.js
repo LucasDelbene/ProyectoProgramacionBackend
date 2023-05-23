@@ -2,7 +2,7 @@
 
 //REALIZO LAS IMPORTACIONES//
 import storage from '../daos/index.js';
-const ordenesStorage = storage().ordenes;
+const ordenesStorage = storage.ordenes;
 import sendEmail from '../utils/nodemailerGmail.js';
 
 //FUNCION CONTROLLER DE CREAR ORDEN//

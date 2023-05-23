@@ -2,7 +2,7 @@
 
 //IMPORTO storage PARA PODER UTILIZARLO//
 import storage from '../daos/index.js';
-const productsStorage = storage().carrito;
+const productsStorage = storage.carrito;
 
 //FUNCION PARA OBTENER TODOS LOS PRODUCTOS DEL CARRITO POR ID//
 const getAllProductsByIdCart = async (peticion,respuesta)=>{
@@ -44,6 +44,7 @@ const addProductToCart = async (peticion,respuesta)=>{
 
         return respuesta.redirect('/api/productos')
     }catch(error){
+        console.log("ERROR AL AGREGAR UN PRODUCTO AL CARRITO:", error);
         return respuesta.status(404).json({
             error: `ERROR AL AGREGAR UN PRODUCTO AL CARRITO ${error}`
         });
@@ -73,6 +74,7 @@ const deleteProductById = async (peticion,respuesta)=>{
 
         return respuesta.redirect('/api/carrito')
     }catch(error){
+        console.log("ERROR AL BORRAR UN PRODUCTO POR ID:", error);
         return respuesta.status(404).json({
             error: `ERROR AL BORRAR UN PRODUCTO POR ID ${error}`
         });

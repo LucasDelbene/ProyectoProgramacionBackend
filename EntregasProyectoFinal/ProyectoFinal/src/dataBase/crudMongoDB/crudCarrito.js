@@ -11,11 +11,11 @@ class Contenedor{
     //FUNCION PARA CREAR CARRITO//
     async createCart(){
         let date = new Date();
-        let nuevoCarrito = {
+        let newCart = {
             timestamp: date,
             products: [],
         };
-        const cart = new this.cartModel(nuevoCarrito);
+        const cart = new this.cartModel(newCart);
 
         this.mongoDB
             .then(_ => cart.save())
@@ -49,7 +49,7 @@ class Contenedor{
         let docUser = false;
         let docProduct = false;
         let esRepetido = false;
-        let nuevoCarrito = [];
+        let newCarrito = [];
 
         docUser = await this.userModel.findOne({_id: idUser}, {__v: 0});
         docProduct = await this.productsModel.findOne({_id: idProduct}, {__v: 0});
@@ -57,10 +57,10 @@ class Contenedor{
         if(docUser && docProduct){
             if(docUser.carrito.length == 0){
                 docProduct.cantidad++;
-                nuevoCarrito.push(docProduct);
+                newCarrito.push(docProduct);
             }else{
-                nuevoCarrito = docUser.carrito;
-                nuevoCarrito.forEach(element =>{
+                newCarrito = docUser.carrito;
+                newCarrito.forEach(element =>{
                     if (element._id.toString() == docProduct._id.toString()) {
                         element.cantidad += 1;
                         element.precio += docProduct.precio;
@@ -69,13 +69,13 @@ class Contenedor{
                 });
                 if(!esRepetido){
                     docProduct.cantidad++;
-                    nuevoCarrito.push(docProduct)
+                    newCarrito.push(docProduct)
                 }
             }
 
             docUser.carrito = [];
             await docUser.save();
-            docUser.carrito = nuevoCarrito;
+            docUser.carrito = newCarrito;
             return await docUser.save();
         }else{
             throw Error(`ERROR AL AGREGAR PRODUCTO`);

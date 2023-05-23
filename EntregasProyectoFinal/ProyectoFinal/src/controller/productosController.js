@@ -2,11 +2,11 @@
 
 //IMPORTO storage PARA PODER UTILIZARLO//
 import storage from '../daos/index.js';
-const productsStorage  = storage().productos;
+const productsStorage  = storage.productos;
 
 //FUNCION PARA AGREGAR PRODUCTO//
 const addProduct = async (peticion,respuesta)=>{
-    const userLog = peticion.user;
+    userLog = peticion.user;
     if(userLog.admin){
         try{
             const name = peticion.body.nombre;
@@ -30,6 +30,7 @@ const addProduct = async (peticion,respuesta)=>{
             const id = await productsStorage.save(newProduct);
             return respuesta.redirect('/api/productos');
         }catch(error){
+            console.log(error);
             return respuesta.status(404).json({
                 error: `ERROR AL AGREGAR PRODUCTO ${error}`
             });

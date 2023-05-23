@@ -25,4 +25,5 @@ const getStorage = ()=>{
             break
     }
 }
-export default getStorage;
+const storage = getStorage();
+export default storage;
