@@ -10,7 +10,7 @@
             <a class="nav-link" href="/api/productos">PRODUCTOS</a>
           </li>
 
-          <% if(userLog.admin){ %>
+          <% if(userLog && userLog.admin){ %>
             <li class="nav-item">
               <a class="nav-link" href="/formAddProduct">AGREGAR PRODUCTOS</a>
             </li>

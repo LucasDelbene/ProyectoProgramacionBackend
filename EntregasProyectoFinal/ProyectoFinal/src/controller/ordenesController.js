@@ -13,8 +13,9 @@ const createOrdenController = async (peticion,respuesta)=>{
         const orden = await ordenesStorage.createOrden(userID);
         auxEmail(userLog, orden);
     
-        return respuesta.render('compraFinalizada');
+        return respuesta.render('compraFinalizada', { userLog: userLog });
     }catch(error){
+        console.log('ERROR AL FINALIZAR COMPRA', error);
         return respuesta.status(404).json({
             error: `ERROR AL CREAR LA ORDEN ${error}`
         });
@@ -37,7 +38,7 @@ const auxEmail = async (userLog,orden)=>{
     });
 
     const emailOpciones ={
-        from: 'coderhouse@gmail.com',
+        from: 'lucasdelbene14@gmail.com',
         to: 'lucasdelbene14@gmail.com',
         subject: `NUEVO PEDIDO DE: ${userLog.username}`,
         html: `
