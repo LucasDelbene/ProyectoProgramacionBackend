@@ -6,8 +6,8 @@ const productsStorage  = storage.productos;
 
 //FUNCION PARA AGREGAR PRODUCTO//
 const addProduct = async (peticion,respuesta)=>{
-    userLog = peticion.user;
-    if(userLog.admin){
+    const userLog = peticion.user;
+    if(userLog){
         try{
             const name = peticion.body.nombre;
             const price = Number(peticion.body.precio);

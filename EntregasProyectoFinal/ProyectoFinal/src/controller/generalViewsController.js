@@ -13,18 +13,18 @@ const signupController = (peticion,respuesta)=>{
 //FUNCION DE BIENVENIDA//
 const bienvenidaController = (peticion,respuesta)=>{
     const userLog = peticion.user;
-    return respuesta.render('bienvenida', {userLog});
+    return respuesta.render('bienvenida', {userLog: userLog});
 }
 
 //FUNCION DE FORMULARIO DE PRODUCTOS//
 const viewFormAddProductController = (peticion,respuesta)=>{
-    return respuesta.render('formProductosAdmin');
+    return respuesta.render('formProductosAdmin', { userLog: peticion.userLog });
 }
 
 //FUNCION DE VER ERROR//
 const viewErrorController = (peticion,respuesta)=>{
-    msgError = peticion.params.msg;
-    return respuesta.render('viewError');
+    const msgError = peticion.params.msg;
+    return respuesta.render('viewError', {msgError});
 }
 
 export {homeController, signupController, bienvenidaController, viewFormAddProductController, viewErrorController};
